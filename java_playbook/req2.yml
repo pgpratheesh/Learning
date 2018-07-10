@@ -1,0 +1,6 @@
+---
+- src: https://github.com/pgpratheesh/New_repo.git
+  name: java_install
+  version: master
+  scm: git
+

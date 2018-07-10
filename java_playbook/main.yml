@@ -1,0 +1,10 @@
+---
+- hosts: web
+  tasks:
+    - name: download role1 to check java
+      command: ansible-galaxy install -r req1.yml
+      delegate_to: localhost
+
+    - name: include role1 to check java
+      include_role:
+        name: /home/ubuntu/.ansible/roles/java_check

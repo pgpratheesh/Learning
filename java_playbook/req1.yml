@@ -1,0 +1,6 @@
+---
+- src: https://github.com/pgpratheesh/dell.git
+  name: java_check
+  version: master
+  scm: git
+
