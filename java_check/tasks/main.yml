@@ -1,13 +1,15 @@
 ---
- - name: Check if java is installed
-   command: java -version
-   register: java_result
-   ignore_errors: True
+- name: Check if java is installed
+  command: java -version
+  register: java_result
+  ignore_errors: yes
 
- - debug:
-     msg: "Success - Java is installed"
-   when:  java_result is success
-      
- - debug:
-     msg: "Success - Java not installed"
-   when:  java_result is failed
+- debug:
+    msg: "Success - Java is installed"
+  when:  java_result is success
+
+- name: include role to install java
+  include_role:
+    name: /home/ubuntu/.ansible/roles/java_install
+  register: install_result
+  when: java_result is failed
